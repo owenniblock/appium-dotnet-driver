@@ -14,7 +14,7 @@ namespace Appium.Integration.Tests.PageObjectTests.Other
         private AndroidDriver<AppiumWebElement> driver;
         private AndroidJavaScriptTestPageObject pageObject;
 
-        [TestFixtureSetUp]
+        [SetUp]
         public void BeforeAll()
         {
             DesiredCapabilities capabilities = Env.isSauce() ?
@@ -32,7 +32,7 @@ namespace Appium.Integration.Tests.PageObjectTests.Other
             driver.StartActivity("io.selendroid.testapp", ".WebViewActivity");
         }
 
-        [TestFixtureTearDown]
+        [TearDown]
         public void AfterEach()
         {
             if (driver != null)

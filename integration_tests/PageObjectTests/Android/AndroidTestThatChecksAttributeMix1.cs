@@ -17,7 +17,7 @@ namespace Appium.Integration.Tests.PageObjectTests.Android
         private AndroidDriver<AppiumWebElement> driver;
         private AndroidPageObjectChecksAttributeMixOnNativeApp1 pageObject;
 
-        [TestFixtureSetUp]
+        [SetUp]
         public void BeforeAll()
         {
             DesiredCapabilities capabilities = Env.isSauce() ?
@@ -37,7 +37,7 @@ namespace Appium.Integration.Tests.PageObjectTests.Android
             PageFactory.InitElements(driver, pageObject, new AppiumPageObjectMemberDecorator(timeSpan));
         }
 
-        [TestFixtureTearDown]
+        [TearDown]
         public void AfterEach()
         {
             if (driver != null)

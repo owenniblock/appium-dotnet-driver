@@ -32,7 +32,7 @@ namespace Appium.Integration.Tests.PageObjectTests.NegativeTests
         [FindsByIOSUIAutomation(Accessibility = "FakeAccebility")]
         private IList<IWebElement> inconsistentElements2;
 
-        [TestFixtureSetUp]
+        [SetUp]
         public void BeforeAll()
         {
             DesiredCapabilities capabilities = Env.isSauce() ?
@@ -51,7 +51,7 @@ namespace Appium.Integration.Tests.PageObjectTests.NegativeTests
             PageFactory.InitElements(driver, this, new AppiumPageObjectMemberDecorator(timeSpan));
         }
 
-        [TestFixtureTearDown]
+        [TearDown]
         public void AfterEach()
         {
             if (driver != null)

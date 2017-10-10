@@ -27,7 +27,7 @@ namespace Appium.Integration.Tests.Windows
         protected const string WindowsApplicationDriverUrl = "http://localhost:4723/wd/hub";
         protected static RemoteWebElement CalculatorResult;
 
-        [TestFixtureSetUp]
+        [SetUp]
         public void BeforeAll()
         {
             DesiredCapabilities appCapabilities = new DesiredCapabilities();
@@ -43,8 +43,8 @@ namespace Appium.Integration.Tests.Windows
             Assert.IsNotNull(CalculatorResult);
         }
 
-        [TestFixtureTearDown]
-        public void TestFixtureTearDown()
+        [TearDown]
+        public void TearDown()
         {
             CalculatorResult = null;
             CalculatorSession.CloseApp();

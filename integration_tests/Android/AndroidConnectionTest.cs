@@ -13,7 +13,7 @@ namespace Appium.Integration.Tests.Android
     {
         private AppiumDriver<IWebElement> driver;
 
-        [TestFixtureSetUp]
+        [SetUp]
         public void BeforeAll()
         {
             DesiredCapabilities capabilities = Env.isSauce() ?
@@ -31,7 +31,7 @@ namespace Appium.Integration.Tests.Android
             driver.Manage().Timeouts().ImplicitlyWait(Env.IMPLICIT_TIMEOUT_SEC);
         }
 
-        [TestFixtureTearDown]
+        [TearDown]
         public void AfterAll()
         {
             if (driver != null)

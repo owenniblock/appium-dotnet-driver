@@ -1,174 +1,35 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project Sdk="Microsoft.NET.Sdk">
+
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A54D6086-3606-4E81-8B89-5C0F61638DCF}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <RootNamespace>OpenQA.Selenium</RootNamespace>
-    <AssemblyName>appium-dotnet-driver</AssemblyName>
-    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
-    <RestorePackages>true</RestorePackages>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
-    <TargetFrameworkProfile />
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <ReleaseVersion>3.0.1.0</ReleaseVersion>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <PackageVersion>3.0.1.0</PackageVersion>
+    <Owners>Appium Contributors</Owners>
+    <Title>appium-dotnet-driver</Title>
+    <Description>Appium Dotnet Driver</Description>
+    <RootNamespace>OpenQA.Selenium.Appium</RootNamespace>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug</OutputPath>
-    <DefineConstants>DEBUG;</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <ConsolePause>false</ConsolePause>
-    <Prefer32Bit>false</Prefer32Bit>
-    <LangVersion>6</LangVersion>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release</OutputPath>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <ConsolePause>false</ConsolePause>
-    <DocumentationFile>bin\Release\appium-dotnet-driver.XML</DocumentationFile>
-    <Prefer32Bit>false</Prefer32Bit>
-    <LangVersion>6</LangVersion>
-  </PropertyGroup>
+
   <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="Castle.Core">
-      <HintPath>$(SolutionDir)\packages\Castle.Core.3.3.3\lib\net45\Castle.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>$(SolutionDir)\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="WebDriver">
-      <HintPath>$(SolutionDir)\packages\Selenium.WebDriver.3.0.1\lib\net40\WebDriver.dll</HintPath>
-    </Reference>
-    <Reference Include="WebDriver.Support">
-      <HintPath>$(SolutionDir)\packages\Selenium.Support.3.0.1\lib\net40\WebDriver.Support.dll</HintPath>
-    </Reference>
+    <Folder Include="Appium\" />
+    <Folder Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Appium\Android\AndroidCommandExecutionHelper.cs" />
-    <Compile Include="Appium\Android\AndroidDriver.cs" />
-    <Compile Include="Appium\Android\AndroidElement.cs" />
-    <Compile Include="Appium\Android\Enums\AndroidKeyCode.cs" />
-    <Compile Include="Appium\Android\Enums\AndroidKeyMetastate.cs" />
-    <Compile Include="Appium\Android\Enums\AutomatorSetting.cs" />
-    <Compile Include="Appium\Android\Interfaces\IHasSettings.cs" />
-    <Compile Include="Appium\Android\Interfaces\IHasNetworkConnection.cs" />
-    <Compile Include="Appium\Android\Interfaces\IPushesFiles.cs" />
-    <Compile Include="Appium\Android\Interfaces\IStartsActivity.cs" />
-    <Compile Include="Appium\AppiumCommand.cs" />
-    <Compile Include="Appium\AppiumCommandExecutionHelper.cs" />
-    <Compile Include="Appium\Enums\AndroidMobileCapabilityType.cs" />
-    <Compile Include="Appium\Enums\AutomationName.cs" />
-    <Compile Include="Appium\Enums\IOSMobileCapabilityType.cs" />
-    <Compile Include="Appium\Enums\MobilePlatform.cs" />
-    <Compile Include="Appium\Enums\MobileBrowserType.cs" />
-    <Compile Include="Appium\Enums\MobileCapabilityType.cs" />
-    <Compile Include="Appium\Android\Enums\ConnectionType.cs" />
-    <Compile Include="Appium\Enums\MobileSelector.cs" />
-    <Compile Include="Appium\Interfaces\IFindsByIosNSPredicate.cs" />
-    <Compile Include="Appium\Interfaces\IExecuteMethod.cs" />
-    <Compile Include="Appium\Interfaces\IFindsByFluentSelector.cs" />
-    <Compile Include="Appium\Interfaces\IHidesKeyboardWithKeyName.cs" />
-    <Compile Include="Appium\Interfaces\ISendsKeyEvents.cs" />
-    <Compile Include="Appium\iOS\Interfaces\IPerformsTouchID.cs" />
-    <Compile Include="Appium\iOS\IOSCommandExecutionHelper.cs" />
-    <Compile Include="Appium\Windows\Enums\WindowsKeyCodes.cs" />
-    <Compile Include="Appium\Interfaces\Generic\SearchContext\IGenericFindsByClassName.cs" />
-    <Compile Include="Appium\Interfaces\Generic\SearchContext\IGenericFindsByCssSelector.cs" />
-    <Compile Include="Appium\Interfaces\Generic\SearchContext\IGenericFindsById.cs" />
-    <Compile Include="Appium\Interfaces\Generic\SearchContext\IGenericFindsByLinkText.cs" />
-    <Compile Include="Appium\Interfaces\Generic\SearchContext\IGenericFindsByName.cs" />
-    <Compile Include="Appium\Interfaces\Generic\SearchContext\IGenericFindsByPartialLinkText.cs" />
-    <Compile Include="Appium\Interfaces\Generic\SearchContext\IGenericFindsByTagName.cs" />
-    <Compile Include="Appium\Interfaces\Generic\SearchContext\IGenericFindsByXPath.cs" />
-    <Compile Include="Appium\Interfaces\Generic\SearchContext\IGenericSearchContext.cs" />
-    <Compile Include="Appium\Interfaces\IContextAware.cs" />
-    <Compile Include="Appium\Interfaces\IFindByWindowsUIAutomation.cs" />
-    <Compile Include="Appium\Interfaces\IHidesKeyboard.cs" />
-    <Compile Include="Appium\Interfaces\IInteractsWithApps.cs" />
-    <Compile Include="Appium\Interfaces\IInteractsWithFiles.cs" />
-    <Compile Include="Appium\Interfaces\IMobileElement.cs" />
-    <Compile Include="Appium\Interfaces\IPerformsTouchActions.cs" />
-    <Compile Include="Appium\iOS\Enums\HideKeyboardStrategy.cs" />
-    <Compile Include="Appium\iOS\Interfaces\IShakesDevice.cs" />
-    <Compile Include="Appium\iOS\IOSDriver.cs" />
-    <Compile Include="Appium\iOS\IOSElement.cs" />
-    <Compile Include="Appium\MobileBy.cs" />
-    <Compile Include="Appium\PageObjects\AppiumPageObjectMemberDecorator.cs" />
-    <Compile Include="Appium\PageObjects\Attributes\FindsByIOSUIAutomationAttribute.cs" />
-    <Compile Include="Appium\PageObjects\Attributes\Abstract\FindsByMobileAttribute.cs" />
-    <Compile Include="Appium\PageObjects\Attributes\FindsBySelendroidAttribute.cs" />
-    <Compile Include="Appium\PageObjects\Attributes\FindsByAndroidUIAutomatorAttribute.cs" />
-    <Compile Include="Appium\PageObjects\Attributes\Abstract\FindsByUIAutomatorsAttribute.cs" />
-    <Compile Include="Appium\PageObjects\Attributes\MobileFindsByAllAttribute.cs" />
-    <Compile Include="Appium\PageObjects\Attributes\MobileFindsBySequenceAttribute.cs" />
-    <Compile Include="Appium\PageObjects\Attributes\WithTimeSpanAttribute.cs" />
-    <Compile Include="Appium\PageObjects\ByFactory.cs" />
-    <Compile Include="Appium\PageObjects\ContentMappedBy.cs" />
-    <Compile Include="Appium\PageObjects\ContentTypes.cs" />
-    <Compile Include="Appium\PageObjects\GenericsUtility.cs" />
-    <Compile Include="Appium\PageObjects\Interceptors\ElementInterceptor.cs" />
-    <Compile Include="Appium\PageObjects\Interceptors\ElementListInterceptor.cs" />
-    <Compile Include="Appium\PageObjects\Interceptors\SearchingInterceptor.cs" />
-    <Compile Include="Appium\PageObjects\TimeOutDuration.cs" />
-    <Compile Include="Appium\PageObjects\WebDriverUnpackUtility.cs" />
-    <Compile Include="Appium\Service\AppiumCommandExecutor.cs" />
-    <Compile Include="Appium\Service\AppiumLocalService.cs" />
-    <Compile Include="Appium\Service\AppiumServiceConstants.cs" />
-    <Compile Include="Appium\Service\Exceptions\AppiumServerHasNotBeenStartedLocallyException.cs" />
-    <Compile Include="Appium\Service\AppiumServiceBuilder.cs" />
-    <Compile Include="Appium\Service\Exceptions\InvalidNodeJSInstanceException.cs" />
-    <Compile Include="Appium\Service\Exceptions\InvalidServerInstanceException.cs" />
-    <Compile Include="Appium\Service\Options\AndroidOptionList.cs" />
-    <Compile Include="Appium\Service\Options\BaseOptionList.cs" />
-    <Compile Include="Appium\Service\Options\IOSOptionList.cs" />
-    <Compile Include="Appium\Service\Options\GeneralOptionList.cs" />
-    <Compile Include="Appium\Service\Options\OptionCollector.cs" />
-    <Compile Include="Appium\Windows\WindowsDriver.cs" />
-    <Compile Include="Appium\Windows\WindowsElement.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Appium\AppiumDriver.cs" />
-    <Compile Include="Appium\AppiumDriverCommand.cs" />
-    <Compile Include="Appium\AppiumWebElement.cs" />
-    <Compile Include="Appium\Interfaces\IFindByAccessibilityId.cs" />
-    <Compile Include="Appium\Interfaces\IFindByAndroidUIAutomator.cs" />
-    <Compile Include="Appium\Interfaces\IFindByIosUIAutomation.cs" />
-    <Compile Include="Appium\ScreenOrientationExtensions.cs" />
-    <Compile Include="Appium\Interfaces\IMultiAction.cs" />
-    <Compile Include="Appium\MultiAction\MultiAction.cs" />
-    <Compile Include="Appium\MultiAction\TouchAction.cs" />
-    <Compile Include="Appium\Interfaces\ITouchAction.cs" />
-    <Compile Include="Appium\Location.cs" />
-    <Compile Include="Appium\Interfaces\ITouchShortcuts.cs" />
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
+    <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
+    <PackageReference Include="Castle.Core" Version="4.2.0" />
+    <PackageReference Include="Selenium.Support" Version="3.0.1" />
+    <PackageReference Include="System.Security.Permissions" Version="4.4.0" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="appium-dotnet-driver.licenseheader" />
-    <None Include="Appium\Service\get_path_to_default_node.sh" />
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Properties\Resources.resx">
+    <EmbeddedResource Update="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
-  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
-  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
-  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-    <PropertyGroup>
-      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
-    </PropertyGroup>
-    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
-  </Target>
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
 </Project>

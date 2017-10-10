@@ -13,7 +13,7 @@ namespace Appium.Integration.Tests.Android
 	{
 		private AndroidDriver<AndroidElement> driver;
 
-		[TestFixtureSetUp]
+		[SetUp]
 		public void BeforeAll(){
 			DesiredCapabilities capabilities = Env.isSauce () ? 
 				Caps.getAndroid501Caps (Apps.get ("androidApiDemos")) :
@@ -35,7 +35,7 @@ namespace Appium.Integration.Tests.Android
             driver.StartActivity("io.appium.android.apis", ".ApiDemos");
         }
 
-		[TestFixtureTearDown]
+		[TearDown]
 		public void AfterAll(){
             if (driver != null)
             {

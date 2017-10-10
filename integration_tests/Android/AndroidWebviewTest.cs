@@ -15,7 +15,7 @@ namespace Appium.Integration.Tests.Android
 	{
 		private IWebDriver driver;
 
-		[TestFixtureSetUp]
+		[SetUp]
 		public void BeforeAll(){
 			DesiredCapabilities capabilities = Env.isSauce () ? 
 				Caps.getAndroid501Caps (Apps.get ("selendroidTestApp")) :
@@ -33,7 +33,7 @@ namespace Appium.Integration.Tests.Android
 			driver.Manage().Timeouts().ImplicitlyWait(Env.IMPLICIT_TIMEOUT_SEC);
 		}
 
-		[TestFixtureTearDown]
+		[TearDown]
 		public void AfterAll(){
             if (driver != null)
             {

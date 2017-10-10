@@ -12,7 +12,7 @@ namespace Appium.Integration.Tests.Android
     {
         private AndroidDriver<AndroidElement> driver;
 
-        [TestFixtureSetUp]
+        [SetUp]
         public void BeforeAll()
         {
             DesiredCapabilities capabilities = Env.isSauce() ?
@@ -96,7 +96,7 @@ namespace Appium.Integration.Tests.Android
             Assert.NotNull(radioGroup.Location);
         }
 
-        [TestFixtureTearDown]
+        [TearDown]
         public void AfterAll()
         {
             if (driver != null)
