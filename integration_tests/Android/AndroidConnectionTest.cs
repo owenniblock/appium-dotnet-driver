@@ -45,6 +45,7 @@ namespace Appium.Integration.Tests.Android
         }
 
         [Test]
+        [Category("Android")]
         public void ConnectionTest()
         {
             ((AndroidDriver<IWebElement>)driver).ConnectionType = ConnectionType.AirplaneMode;

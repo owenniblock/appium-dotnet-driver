@@ -46,6 +46,7 @@ namespace Appium.Integration.Tests.Android
         }
 
 		[Test ()]
+        [Category("Android")]
 		public void WebViewTestCase ()
 		{
             Thread.Sleep(5000);

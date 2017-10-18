@@ -48,6 +48,7 @@ namespace Appium.Integration.Tests.Android
         }
 
         [Test]
+        [Category("Android")]
         public void GetDeviceUDIDTest()
         {
             string deviceUIID = driver.SessionDetails["deviceUDID"].ToString();
@@ -55,6 +56,7 @@ namespace Appium.Integration.Tests.Android
         }
 
         [Test]
+        [Category("Android")]
         public void GetDeviceDictionaryData()
         {
             Dictionary<string, object> dictionary = (Dictionary<string, object>) driver.SessionDetails["desired"];

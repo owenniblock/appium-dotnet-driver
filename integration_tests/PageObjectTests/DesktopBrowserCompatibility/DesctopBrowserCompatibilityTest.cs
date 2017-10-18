@@ -40,9 +40,9 @@ namespace Appium.Integration.Tests.PageObjectTests.DesktopBrowserCompatibility
             driver = new FirefoxDriver();
             driver.Url = "https://www.google.com";
             AppiumPageObjectMemberDecorator decorator = new AppiumPageObjectMemberDecorator(timeSpan);
-            PageFactory.InitElements(driver, this, decorator);
+            //PageFactory.InitElements(driver, this, decorator);
             links = new FoundLinks();
-            PageFactory.InitElements(ires, links, decorator);
+            //PageFactory.InitElements(ires, links, decorator);
         }
 
         [TearDown]

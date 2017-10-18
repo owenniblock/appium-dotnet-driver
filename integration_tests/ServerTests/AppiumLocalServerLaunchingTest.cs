@@ -60,6 +60,7 @@ namespace Appium.Integration.Tests.ServerTests
         }
 
         [Test]
+        [Category("Server")]
         public void CheckAbilityToBuildDefaultService()
         {
             AppiumLocalService service = AppiumLocalService.BuildDefaultService();
@@ -75,6 +76,7 @@ namespace Appium.Integration.Tests.ServerTests
         }
 
         [Test]
+        [Category("Server")]
         public void CheckAbilityToBuildServiceUsingNodeDefinedInProperties()
         {
             AppiumLocalService service = null;
@@ -97,6 +99,7 @@ namespace Appium.Integration.Tests.ServerTests
         }
 
         [Test]
+        [Category("Server")]
         public void CheckAbilityToBuildServiceUsingNodeDefinedExplicitly()
         {
             AppiumLocalService service = null;
@@ -116,6 +119,7 @@ namespace Appium.Integration.Tests.ServerTests
         }
 
         [Test]
+        [Category("Server")]
         public void CheckAbilityToStartServiceOnAFreePort()
         {
             AppiumLocalService service = null;
@@ -135,6 +139,7 @@ namespace Appium.Integration.Tests.ServerTests
         }
 
         [Test]
+        [Category("Server")]
         public void CheckStartingOfAServiceWithNonLocalhostIP()
         {
             AppiumLocalService service = new AppiumServiceBuilder().WithIPAddress(testIP).UsingPort(4000).
@@ -151,6 +156,7 @@ namespace Appium.Integration.Tests.ServerTests
         }
 
         [Test]
+        [Category("Server")]
         public void CheckAbilityToStartServiceUsingFlags()
         {
             AppiumLocalService service = null;
@@ -172,6 +178,7 @@ namespace Appium.Integration.Tests.ServerTests
         }
 
         [Test]
+        [Category("Server")]
         public void CheckAbilityToStartServiceUsingCapabilities()
         {
             DesiredCapabilities capabilities = new DesiredCapabilities();
@@ -199,6 +206,7 @@ namespace Appium.Integration.Tests.ServerTests
         }
 
         [Test]
+        [Category("Server")]
         public void CheckAbilityToStartServiceUsingCapabilitiesAndFlags()
         {
             DesiredCapabilities capabilities = new DesiredCapabilities();
@@ -228,6 +236,7 @@ namespace Appium.Integration.Tests.ServerTests
         }
 
         [Test]
+        [Category("Server")]
         public void CheckAbilityToShutDownService()
         {
             AppiumLocalService service = AppiumLocalService.BuildDefaultService();
@@ -237,6 +246,7 @@ namespace Appium.Integration.Tests.ServerTests
         }
 
         [Test]
+        [Category("Server")]
         public void CheckAbilityToStartAndShutDownFewServices()
         {
             AppiumLocalService service1 = new AppiumServiceBuilder().UsingAnyFreePort().Build();
@@ -262,6 +272,7 @@ namespace Appium.Integration.Tests.ServerTests
 
 
         [Test]
+        [Category("Server")]
         public void CheckTheAbilityToDefineTheDesiredLogFile()
         {
             FileInfo log = new FileInfo("Log.txt");

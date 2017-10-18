@@ -36,6 +36,7 @@ namespace Appium.Integration.Tests.ServerTests
         }
 
         [Test]
+        [Category("Server")]
         public void StartingAndroidAppWithCapabilitiesAndServiceTest()
         {
 
@@ -65,6 +66,7 @@ namespace Appium.Integration.Tests.ServerTests
 
 
         [Test]
+        [Category("Server")]
         public void StartingAndroidAppWithCapabilitiesOnTheServerSideTest()
         {
             string app = Apps.get("androidApiDemos");
@@ -96,6 +98,7 @@ namespace Appium.Integration.Tests.ServerTests
         }
 
         [Test]
+        [Category("Server")]
         public void StartingIOSAppWithCapabilitiesOnlyTest()
         {
             string app = Apps.get("iosTestApp");
@@ -118,6 +121,7 @@ namespace Appium.Integration.Tests.ServerTests
         }
 
         [Test]
+        [Category("Server")]
         public void StartingIOSAppWithCapabilitiesAndServiseTest()
         {
             string app = Apps.get("iosTestApp");
@@ -144,6 +148,7 @@ namespace Appium.Integration.Tests.ServerTests
         }
 
         [Test]
+        [Category("Server")]
         public void CheckThatServiseIsNotRunWhenTheCreatingOfANewSessionIsFailed()
         {
             DesiredCapabilities capabilities = Env.isSauce() ?   //it will be a cause of error

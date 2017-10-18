@@ -5,7 +5,7 @@ VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "appium-dotnet-driver", "appium-dotnet-driver\appium-dotnet-driver.csproj", "{D9107A76-238E-4A3C-9452-7F9966822A51}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "integration_tests", "integration_tests\integration_tests.csproj", "{145BC3DB-2801-41E0-802B-708708AC387B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "integration_tests", "integration_tests\integration_tests.csproj", "{0BA827CC-1EC5-4DB7-A40A-8F5697B64AAB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{D9107A76-238E-4A3C-9452-7F9966822A51}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D9107A76-238E-4A3C-9452-7F9966822A51}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D9107A76-238E-4A3C-9452-7F9966822A51}.Release|Any CPU.Build.0 = Release|Any CPU
-		{145BC3DB-2801-41E0-802B-708708AC387B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{145BC3DB-2801-41E0-802B-708708AC387B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{145BC3DB-2801-41E0-802B-708708AC387B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{145BC3DB-2801-41E0-802B-708708AC387B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0BA827CC-1EC5-4DB7-A40A-8F5697B64AAB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0BA827CC-1EC5-4DB7-A40A-8F5697B64AAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0BA827CC-1EC5-4DB7-A40A-8F5697B64AAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0BA827CC-1EC5-4DB7-A40A-8F5697B64AAB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

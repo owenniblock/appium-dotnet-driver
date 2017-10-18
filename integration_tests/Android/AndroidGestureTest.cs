@@ -41,19 +41,11 @@ namespace Appium.Integration.Tests.Android
         }
 
         [TearDown]
-        public void TearDowwn()
-        {
-            if (driver != null)
-            {
-                driver.CloseApp();
-            }
-        }
-
-        [TearDown]
         public void AfterAll()
         {
             if (driver != null)
             {
+                driver.CloseApp();
                 driver.Quit();
             }
             if (!Env.isSauce())
@@ -63,6 +55,7 @@ namespace Appium.Integration.Tests.Android
         }
 
         [Test()]
+        [Category("Android")]
         public void SwipeTest()
         {
             driver.StartActivity("io.appium.android.apis",".graphics.FingerPaint");
@@ -89,6 +82,7 @@ namespace Appium.Integration.Tests.Android
         }
 
         [Test()]
+        [Category("Android")]
         public void PincTest()
         {
             driver.StartActivity("io.appium.android.apis", ".graphics.TouchRotateActivity");
@@ -97,6 +91,7 @@ namespace Appium.Integration.Tests.Android
         }
 
         [Test()]
+        [Category("Android")]
         public void ZoomTest()
         {
             driver.StartActivity("io.appium.android.apis", ".graphics.TouchRotateActivity");

@@ -33,6 +33,7 @@ namespace Appium.Integration.Tests.Android
         }
 
         [Test] 
+        [Category("Android")]
         public void StartActivityWithDefaultIntentAndDefaultCategoryWithOptionalArgs()
         {
             driver.StartActivityWithIntent("com.prgguru.android", ".GreetingActivity", "android.intent.action.MAIN", null, null,

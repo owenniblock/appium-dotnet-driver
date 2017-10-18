@@ -17,14 +17,6 @@
     <Folder Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="helpers\PathToWindowsNode">
-      <LogicalName>PathToWindowsNode</LogicalName>
-    </EmbeddedResource>
-    <EmbeddedResource Include="helpers\ApiDemos-debug.apk">
-      <LogicalName>ApiDemos_debug</LogicalName>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
     <EmbeddedResource Update="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -36,22 +28,14 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Selenium.Support" Version="3.0.1" />
     <PackageReference Include="dotnet-test-nunit" Version="3.4.0-beta-3" />
     <PackageReference Include="NUnit" Version="3.8.1" />
     <PackageReference Include="NUnit3TestAdapter" Version="3.8.0" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.3.0" />
     <PackageReference Include="System.Security.Permissions" Version="4.4.0" />
+    <PackageReference Include="Selenium.Support" Version="3.6.0" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\appium-dotnet-driver\appium-dotnet-driver.csproj" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Remove="helpers\ApiDemos-debug.apk" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Update="helpers\IntentExample.apk">
-      <LogicalName>IntentExample</LogicalName>
-    </None>
   </ItemGroup>
 </Project>

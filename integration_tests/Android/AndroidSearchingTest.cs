@@ -48,6 +48,7 @@ namespace Appium.Integration.Tests.Android
         }
 
         [Test()]
+        [Category("Android")]
         public void FindByAccessibilityIdTest()
         {
             By byAccessibilityId = new ByAccessibilityId("Graphics");
@@ -56,6 +57,7 @@ namespace Appium.Integration.Tests.Android
         }
 
         [Test]
+        [Category("Android")]
         public void FindByAndroidUIAutomatorTest()
         {
             By byAndroidUIAutomator = new ByAndroidUIAutomator("new UiSelector().clickable(true)");
@@ -64,6 +66,7 @@ namespace Appium.Integration.Tests.Android
         }
 
         [Test]
+        [Category("Android")]
         public void FindByXPathTest()
         {
             string byXPath = "//android.widget.TextView[contains(@text, 'Animat')]";
@@ -72,6 +75,7 @@ namespace Appium.Integration.Tests.Android
         }
 
         [Test]
+        [Category("Android")]
         public void FindScrollable()
         {
             driver.FindElementByAccessibilityId("Views").Click();

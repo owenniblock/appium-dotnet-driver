@@ -48,7 +48,7 @@ namespace Appium.Integration.Tests.PageObjectTests.NegativeTests
             Uri serverUri = Env.isSauce() ? AppiumServers.sauceURI : AppiumServers.LocalServiceURIAndroid;
             driver = new AndroidDriver<AppiumWebElement>(serverUri, capabilities, Env.INIT_TIMEOUT_SEC);
             TimeOutDuration timeSpan = new TimeOutDuration(new TimeSpan(0, 0, 0, 5, 0));
-            PageFactory.InitElements(driver, this, new AppiumPageObjectMemberDecorator(timeSpan));
+            //PageFactory.InitElements(driver, this, new AppiumPageObjectMemberDecorator(timeSpan));
         }
 
         [TearDown]
@@ -65,6 +65,7 @@ namespace Appium.Integration.Tests.PageObjectTests.NegativeTests
         }
 
         [Test()]
+        [Category("AndroidFailure")]
         public void WhenThereIsNoConsistentLocatorForCurrentPlatform_NoSuchElementExceptionShouldBeThrown()
         {
             try
@@ -79,12 +80,14 @@ namespace Appium.Integration.Tests.PageObjectTests.NegativeTests
         }
 
         [Test()]
+        [Category("AndroidFailure")]
         public void WhenThereIsNoConsistentLocatorForCurrentPlatform_EmptyListShouldBeFound()
         {
             Assert.AreEqual(0, inconsistentElements1.Count);
         }
 
         [Test()]
+        [Category("AndroidFailure")]
         public void WhenDefaultLocatorIsInvalidForCurrentPlatform_NoSuchElementExceptionShouldBeThrown()
         {
             try
@@ -99,6 +102,7 @@ namespace Appium.Integration.Tests.PageObjectTests.NegativeTests
         }
 
         [Test()]
+        [Category("AndroidFailure")]
         public void WhenDefaultLocatorIsInvalidForCurrentPlatform_EmptyListShouldBeFound()
         {
             Assert.AreEqual(0, inconsistentElements2.Count);

@@ -48,6 +48,7 @@ namespace Appium.Integration.Tests.Android
         }
 
         [Test]
+        [Category("Android")]
         public void PushStringTest()
         {
             string data =
@@ -59,6 +60,7 @@ namespace Appium.Integration.Tests.Android
         }
 
         [Test]
+        [Category("Android")]
         public void PushBytesTest()
         {
             string data =
@@ -73,6 +75,7 @@ namespace Appium.Integration.Tests.Android
         }
 
         [Test]
+        [Category("Android")]
         public void PushFileTest()
         {
             string filePath = System.IO.Path.GetTempPath();

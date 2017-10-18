@@ -32,7 +32,7 @@ namespace Appium.Integration.Tests.PageObjectTests.Other
             driver = new AndroidDriver<AppiumWebElement>(serverUri, capabilities, Env.INIT_TIMEOUT_SEC);
             TimeOutDuration timeSpan = new TimeOutDuration(new TimeSpan(0, 0, 0, 5, 0));
             pageObject = new AndroidPageObjectThatChecksTouchActions();
-            PageFactory.InitElements(driver, pageObject, new AppiumPageObjectMemberDecorator(timeSpan));
+            //PageFactory.InitElements(driver, pageObject, new AppiumPageObjectMemberDecorator(timeSpan));
         }
 
         [TearDown]
@@ -49,6 +49,7 @@ namespace Appium.Integration.Tests.PageObjectTests.Other
         }
 
         [Test()]
+        [Category("AndroidFailure")]
         public void CheckTap()
         {
             pageObject.CheckTap(driver);

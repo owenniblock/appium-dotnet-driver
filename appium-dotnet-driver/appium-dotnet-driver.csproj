@@ -18,8 +18,8 @@
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
     <PackageReference Include="Castle.Core" Version="4.2.0" />
-    <PackageReference Include="Selenium.Support" Version="3.0.1" />
     <PackageReference Include="System.Security.Permissions" Version="4.4.0" />
+    <PackageReference Include="Selenium.Support" Version="3.6.0" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Update="Properties\Resources.resx">

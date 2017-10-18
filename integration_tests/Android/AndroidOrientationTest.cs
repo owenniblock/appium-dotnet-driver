@@ -44,6 +44,7 @@ namespace Appium.Integration.Tests.Android
         }
 
         [Test]
+        [Category("Android")]
         public void OrientationTest()
         {
             IRotatable rotatable =  ((IRotatable) driver);

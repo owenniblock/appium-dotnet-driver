@@ -44,6 +44,7 @@ namespace Appium.Integration.Tests.Android
         }
 
         [Test()]
+        [Category("Android")]
         public void HideKeyBoardTestCase()
         {
             driver.StartActivity("io.appium.android.apis", ".app.CustomTitle");

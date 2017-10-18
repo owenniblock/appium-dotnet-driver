@@ -7,7 +7,7 @@ using System;
 
 namespace Appium.Integration.Tests.Android
 {
-    class AndroidEmulatorDeviceTime
+    public class AndroidEmulatorDeviceTime
     {
         private AppiumDriver<AndroidElement> driver;
 
@@ -43,6 +43,7 @@ namespace Appium.Integration.Tests.Android
         }
 
         [Test()]
+        [Category("Android")]
         public void DeviceTimeTest()
         {
             string time = driver.DeviceTime;

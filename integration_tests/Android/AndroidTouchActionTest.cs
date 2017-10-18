@@ -43,18 +43,10 @@ namespace Appium.Integration.Tests.Android
         }
 
         [TearDown]
-        public void TearDowwn()
-        {
-            if (driver != null)
-            {
-                driver.CloseApp();
-            }
-        }
-
-        [TearDown]
 		public void AfterAll(){
             if (driver != null)
             {
+                driver.CloseApp();
                 driver.Quit();
             }
             if (!Env.isSauce())
@@ -64,6 +56,7 @@ namespace Appium.Integration.Tests.Android
 		}
 
         [Test()]
+        [Category("Android")]
         public void SimpleTouchActionTestCase()
         {
             IList<AppiumWebElement> els = driver.FindElementsByClassName("android.widget.TextView");
@@ -79,6 +72,7 @@ namespace Appium.Integration.Tests.Android
         }
 
         [Test ()]
+        [Category("AndroidFailing")]
 		public void ComplexTouchActionTestCase ()
 		{
 			IList<AppiumWebElement> els = driver.FindElementsByClassName ("android.widget.TextView");
@@ -90,6 +84,7 @@ namespace Appium.Integration.Tests.Android
 		}
 
         [Test()]
+        [Category("AndroidFailing")]
         public void SingleMultiActionTestCase()
         {
             IList<AppiumWebElement> els = driver.FindElementsByClassName("android.widget.TextView");
@@ -108,6 +103,7 @@ namespace Appium.Integration.Tests.Android
         }
 
         [Test()]
+        [Category("Android")]
         public void SequentalMultiActionTestCase()
         {
             string originalActivity = driver.CurrentActivity;

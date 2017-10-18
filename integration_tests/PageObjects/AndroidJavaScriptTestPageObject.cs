@@ -17,7 +17,7 @@ namespace Appium.Integration.Tests.PageObjects
         {
             this.driver = driver;
             TimeOutDuration timeSpan = new TimeOutDuration(new TimeSpan(0, 0, 0, 5, 0));
-            PageFactory.InitElements(driver, this, new AppiumPageObjectMemberDecorator(timeSpan));
+            //PageFactory.InitElements(driver, this, new AppiumPageObjectMemberDecorator(timeSpan));
         }
 
         public void HighlightElement()

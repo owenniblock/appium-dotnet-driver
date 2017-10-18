@@ -60,6 +60,7 @@ namespace Appium.Integration.Tests.Windows
         }
 
         [Test()]
+        [Category("Windows")]
         public void Addition()
         {
             CalculatorSession.FindElementByName("One").Click();
@@ -70,6 +71,7 @@ namespace Appium.Integration.Tests.Windows
         }
 
         [Test()]
+        [Category("Windows")]
         public void Combination()
         {
             CalculatorSession.FindElementByName("Seven").Click();
@@ -85,6 +87,7 @@ namespace Appium.Integration.Tests.Windows
         }
 
         [Test]
+        [Category("Windows")]
         public void Division()
         {
             CalculatorSession.FindElementByName("Eight").Click();
@@ -97,6 +100,7 @@ namespace Appium.Integration.Tests.Windows
         }
 
         [Test]
+        [Category("Windows")]
         public void Multiplication()
         {
             CalculatorSession.FindElementByName("Nine").Click();
@@ -107,6 +111,7 @@ namespace Appium.Integration.Tests.Windows
         }
 
         [Test]
+        [Category("Windows")]
         public void Subtraction()
         {
             CalculatorSession.FindElementByName("Nine").Click();

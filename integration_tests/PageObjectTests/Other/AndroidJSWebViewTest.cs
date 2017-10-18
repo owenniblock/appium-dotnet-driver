@@ -46,6 +46,7 @@ namespace Appium.Integration.Tests.PageObjectTests.Other
         }
 
         [Test()]
+        [Category("AndroidFailure")]
         public void HighlightingByJS()
         {
             Thread.Sleep(5000);

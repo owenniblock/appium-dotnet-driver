@@ -27,6 +27,8 @@ namespace Appium.Integration.Tests.Android
                 capabilities.SetCapability("name", "android - complex");
                 capabilities.SetCapability("tags", new string[] { "sample" });
             }
+            //capabilities.SetCapability("appPackage", "com.android.contacts");
+            //capabilities.SetCapability("appActivity", "com.android.contacts.ContactsListActivity");
             Uri serverUri = Env.isSauce() ? AppiumServers.sauceURI : AppiumServers.LocalServiceURIAndroid;
             driver = new AndroidDriver<AppiumWebElement>(serverUri, capabilities, Env.INIT_TIMEOUT_SEC);
             driver.Manage().Timeouts().ImplicitlyWait(Env.IMPLICIT_TIMEOUT_SEC);
@@ -42,16 +44,8 @@ namespace Appium.Integration.Tests.Android
             }
         }
 
-        [TearDown]
-        public void TearDowwn()
-        {
-            if (driver != null)
-            {
-                driver.CloseApp();
-            }
-        }
-
         [Test]
+        [Category("Android")]
         public void StartActivityInThisAppTestCase()
         {
             driver.StartActivity("io.appium.android.apis", ".ApiDemos");
@@ -64,6 +58,7 @@ namespace Appium.Integration.Tests.Android
         }
 
         [Test]
+        [Category("Android")]
         public void StartActivityWithWaitingAppTestCase()
         {
             driver.StartActivity("io.appium.android.apis", ".ApiDemos", "io.appium.android.apis", ".ApiDemos");
@@ -77,6 +72,7 @@ namespace Appium.Integration.Tests.Android
         }
 
         [Test]
+        [Category("AndroidFailure")]
         public void StartActivityInNewAppTestCase()
         {
             driver.StartActivity("io.appium.android.apis", ".ApiDemos");
@@ -91,6 +87,7 @@ namespace Appium.Integration.Tests.Android
         }
 
         [Test]
+        [Category("Android")]
         public void StartActivityInNewAppTestCaseWithoutClosingApp()
         {
             driver.StartActivity("io.appium.android.apis", ".accessibility.AccessibilityNodeProviderActivity");
@@ -110,6 +107,7 @@ namespace Appium.Integration.Tests.Android
         {
             if (driver != null)
             {
+                driver.CloseApp();
                 driver.Quit();
             }
             if (!Env.isSauce())

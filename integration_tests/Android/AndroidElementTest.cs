@@ -37,6 +37,7 @@ namespace Appium.Integration.Tests.Android
         }
 
         [Test()]
+        [Category("Android")]
         public void FindByAccessibilityIdTest()
         {
             By byAccessibilityId = new ByAccessibilityId("Graphics");
@@ -45,6 +46,7 @@ namespace Appium.Integration.Tests.Android
         }
 
         [Test()]
+        [Category("Android")]
         public void FindByAndroidUIAutomatorTest()
         {
             By byAndroidUIAutomator = new ByAndroidUIAutomator("new UiSelector().clickable(true)");
@@ -53,6 +55,7 @@ namespace Appium.Integration.Tests.Android
         }
 
         [Test]
+        [Category("Android")]
         public void ReplaceValueTest()
         {
             string originalValue = "original value";
@@ -72,6 +75,7 @@ namespace Appium.Integration.Tests.Android
         }
 
         [Test]
+        [Category("Android")]
         public void SetImmediateValueTest()
         {
             string value = "new value";
@@ -86,6 +90,7 @@ namespace Appium.Integration.Tests.Android
         }
 
         [Test]
+        [Category("Android")]
         public void ScrollingToSubElement()
         {
             driver.FindElementByAccessibilityId("Views").Click();

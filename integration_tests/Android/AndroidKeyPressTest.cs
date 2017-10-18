@@ -52,24 +52,28 @@ namespace Appium.Integration.Tests.Android
         }
 
         [Test]
+        [Category("Android")]
         public void PressKeyCodeTest()
         {
             driver.PressKeyCode(AndroidKeyCode.Home);
         }
 
         [Test]
+        [Category("Android")]
         public void PressKeyCodeWithMetastateTest()
         {
             driver.PressKeyCode(AndroidKeyCode.Space, AndroidKeyMetastate.Meta_Shift_On);
         }
 
         [Test]
+        [Category("Android")]
         public void LongPressKeyCodeTest()
         {
             driver.LongPressKeyCode(AndroidKeyCode.Home);
         }
 
         [Test]
+        [Category("Android")]
         public void LongPressKeyCodeWithMetastateTest()
         {
             driver.LongPressKeyCode(AndroidKeyCode.Space, AndroidKeyMetastate.Meta_Shift_On);

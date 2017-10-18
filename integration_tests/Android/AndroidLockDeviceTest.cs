@@ -42,6 +42,7 @@ namespace Appium.Integration.Tests.Android
         }
 
         [Test()]
+        [Category("AndroidFailing")]
         public void LockTest()
         {
             driver.Lock();

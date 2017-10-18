@@ -33,6 +33,7 @@ namespace Appium.Integration.Tests.Android
         }
 
         [Test]
+        [Category("Android")]
         public void IgnoreUnimportantViewsTest()
         {
             driver.IgnoreUnimportantViews(true);
@@ -45,6 +46,7 @@ namespace Appium.Integration.Tests.Android
         }
 
         [Test]
+        [Category("Android")]
         public void ConfiguratorTest()
         {
             driver.ConfiguratorSetActionAcknowledgmentTimeout(500);
@@ -62,6 +64,7 @@ namespace Appium.Integration.Tests.Android
         }
 
         [Test]
+        [Category("Android")]
         public void ConfiguratorPropertyTest()
         {
             Dictionary<string, object> data = new Dictionary<string, object>()

@@ -44,6 +44,7 @@ namespace Appium.Integration.Tests.Android
         }
 
         [Test()]
+        [Category("Android")]
         public void setLocationTest()
         {
             var l = new Location();

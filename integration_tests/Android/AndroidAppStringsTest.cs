@@ -45,11 +45,13 @@ namespace Appium.Integration.Tests.Android
 		}
 
 		[Test]
+        [Category("Android")]
 		public void GetAppStrings() {
 			Assert.AreNotSame(0, driver.GetAppStringDictionary ().Count);
 		}
 
 		[Test]
+        [Category("Android")]
 		public void GetAppStringsUsingLang() {
 			Assert.AreNotSame(0, driver.GetAppStringDictionary ("en").Count);
 		}
