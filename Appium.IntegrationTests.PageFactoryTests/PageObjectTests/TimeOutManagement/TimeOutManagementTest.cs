@@ -36,7 +36,7 @@ namespace Appium.Integration.Tests.PageObjectTests.TimeOutManagement
                 driver = new FirefoxDriver();
             }
             duration = new TimeOutDuration(new TimeSpan(0, 0, 5));
-            //PageFactory.InitElements(driver, this, new AppiumPageObjectMemberDecorator(duration));
+            PageFactory.InitElements(driver, this, new AppiumPageObjectMemberDecorator(duration));
         }
 
         [TearDown]

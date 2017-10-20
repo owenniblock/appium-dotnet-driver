@@ -8,6 +8,7 @@ using System;
 using System.IO;
 using System.Net;
 using System.Threading;
+using Appium.IntegrationTests.Shared;
 
 namespace Appium.Integration.Tests.ServerTests
 {
@@ -20,12 +21,6 @@ namespace Appium.Integration.Tests.ServerTests
         [SetUp]
         public void BeforeAll()
         {
-            byte[] bytes = null;
-
-            bool isWindows = Platform.CurrentPlatform.IsPlatformType(PlatformType.Windows);
-            bool isMacOS = Platform.CurrentPlatform.IsPlatformType(PlatformType.Mac);
-            bool isLinux = Platform.CurrentPlatform.IsPlatformType(PlatformType.Linux);
-
             IPHostEntry host;
             string hostName = Dns.GetHostName();
             host = Dns.GetHostEntry(hostName);
@@ -39,24 +34,8 @@ namespace Appium.Integration.Tests.ServerTests
             }
             Console.WriteLine(testIP);
 
-            if (isWindows)
-            {
-                bytes = Properties.Resources.PathToWindowsNode;
-                PathToCustomizedAppiumJS = System.Text.Encoding.UTF8.GetString(bytes);
-                return;
-            }
-            if (isMacOS)
-            {
-                bytes = Properties.Resources.PathToMacOSNode;
-                PathToCustomizedAppiumJS = System.Text.Encoding.UTF8.GetString(bytes);
-                return;
-            }
-            if (isLinux)
-            {
-                bytes = Properties.Resources.PathToLinuxNode;
-                PathToCustomizedAppiumJS = System.Text.Encoding.UTF8.GetString(bytes);
-                return;
-            }
+            var nodePathHelper = new NodePathHelper();
+            PathToCustomizedAppiumJS = nodePathHelper.GetNodePath();
         }
 
         [Test]

@@ -7,6 +7,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "appium-dotnet-driver", "app
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "integration_tests", "integration_tests\integration_tests.csproj", "{0BA827CC-1EC5-4DB7-A40A-8F5697B64AAB}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IntegrationTests", "IntegrationTests", "{32EB3A35-945A-46BD-8695-596C3863DB35}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Appium.IntegrationTests.PageFactoryTests", "Appium.IntegrationTests.PageFactoryTests\Appium.IntegrationTests.PageFactoryTests.csproj", "{AD5035A6-FB3B-4B1A-9EBB-8215DA50EE75}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Appium.IntegrationTests.Shared", "Appium.IntegrationTests.PageFactoryTests\Appium.IntegrationTests.Shared\Appium.IntegrationTests.Shared.csproj", "{2D44D8B3-2F44-4337-B753-90B0A43B9F73}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +27,14 @@ Global
 		{0BA827CC-1EC5-4DB7-A40A-8F5697B64AAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0BA827CC-1EC5-4DB7-A40A-8F5697B64AAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0BA827CC-1EC5-4DB7-A40A-8F5697B64AAB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD5035A6-FB3B-4B1A-9EBB-8215DA50EE75}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD5035A6-FB3B-4B1A-9EBB-8215DA50EE75}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD5035A6-FB3B-4B1A-9EBB-8215DA50EE75}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD5035A6-FB3B-4B1A-9EBB-8215DA50EE75}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2D44D8B3-2F44-4337-B753-90B0A43B9F73}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D44D8B3-2F44-4337-B753-90B0A43B9F73}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D44D8B3-2F44-4337-B753-90B0A43B9F73}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D44D8B3-2F44-4337-B753-90B0A43B9F73}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -31,5 +45,9 @@ Global
 		$0.DotNetNamingPolicy = $1
 		$0.TextStylePolicy = $9
 		version = 3.0.1.0
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{AD5035A6-FB3B-4B1A-9EBB-8215DA50EE75} = {32EB3A35-945A-46BD-8695-596C3863DB35}
+		{2D44D8B3-2F44-4337-B753-90B0A43B9F73} = {32EB3A35-945A-46BD-8695-596C3863DB35}
 	EndGlobalSection
 EndGlobal

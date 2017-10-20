@@ -12,17 +12,16 @@ using System;
 namespace Appium.Integration.Tests.PageObjectTests.Android
 {
     [TestFixture()]
-    public class AndroidNativeAppAttributesTest
+    public class AndroidTestThatChecksAttributeMix3SelendroidMode
     {
         private AndroidDriver<AppiumWebElement> driver;
-        private AndroidPageObjectChecksAttributesForNativeAndroidApp pageObject;
+        private AndroidPageObjectChecksSelendroidModeOnNativeApp pageObject;
 
         [SetUp]
         public void BeforeAll()
         {
-            DesiredCapabilities capabilities = Env.isSauce() ?
-                Caps.getAndroid501Caps(Apps.get("androidApiDemos")) :
-                Caps.getAndroid19Caps(Apps.get("androidApiDemos"));
+            DesiredCapabilities capabilities =
+                Caps.getSelendroid19Caps(Apps.get("selendroidTestApp"));
             if (Env.isSauce())
             {
                 capabilities.SetCapability("username", Env.getEnvVar("SAUCE_USERNAME"));
@@ -32,9 +31,10 @@ namespace Appium.Integration.Tests.PageObjectTests.Android
             }
             Uri serverUri = Env.isSauce() ? AppiumServers.sauceURI : AppiumServers.LocalServiceURIAndroid;
             driver = new AndroidDriver<AppiumWebElement>(serverUri, capabilities, Env.INIT_TIMEOUT_SEC);
+            driver.Context = "NATIVE_APP";
             TimeOutDuration timeSpan = new TimeOutDuration(new TimeSpan(0, 0, 0, 5, 0));
-            pageObject = new AndroidPageObjectChecksAttributesForNativeAndroidApp();
-            //PageFactory.InitElements(driver, pageObject, new AppiumPageObjectMemberDecorator(timeSpan));
+            pageObject = new AndroidPageObjectChecksSelendroidModeOnNativeApp();
+            PageFactory.InitElements(driver, pageObject, new AppiumPageObjectMemberDecorator(timeSpan));
         }
 
         [TearDown]
@@ -50,121 +50,118 @@ namespace Appium.Integration.Tests.PageObjectTests.Android
             }
         }
 
-        [Test()]
-        [Category("Android")]
+         [Test()]
+        [Category("AndroidFailed")]
         public void CheckMobileElement()
         {
             Assert.NotNull(pageObject.GetMobileElementText());
         }
 
         [Test()]
-        [Category("Android")]
+        [Category("AndroidFailed")]
         public void CheckMobileElements()
         {
             Assert.GreaterOrEqual(pageObject.GetMobileElementSize(), 1);
         }
 
         [Test()]
-        [Category("Android")]
+        [Category("AndroidFailed")]
         public void CheckMobileElementProperty()
         {
             Assert.NotNull(pageObject.GetMobileElementPropertyText());
         }
 
         [Test()]
-        [Category("Android")]
+        [Category("AndroidFailed")]
         public void CheckMobileElementsProperty()
         {
             Assert.GreaterOrEqual(pageObject.GetMobileElementPropertySize(), 1);
         }
 
         [Test()]
-        [Category("Android")]
+        [Category("AndroidFailed")]
         public void CheckElementFoundUsingMultipleLocators()
         {
             Assert.NotNull(pageObject.GetMultipleFindByElementText());
         }
 
         [Test()]
-        [Category("Android")]
+        [Category("AndroidFailed")]
         public void CheckElementsFoundUsingMultipleLocators()
         {
-            Assert.GreaterOrEqual(pageObject.GetMultipleFindByElementSize(), 10);
-            Assert.LessOrEqual(pageObject.GetMultipleFindByElementSize(), 14);
+            Assert.GreaterOrEqual(pageObject.GetMultipleFindByElementSize(), 1);
         }
 
         [Test()]
-        [Category("Android")]
+        [Category("AndroidFailed")]
         public void CheckElementFoundUsingMultipleLocatorsProperty()
         {
             Assert.NotNull(pageObject.GetMultipleFindByElementPropertyText());
         }
 
         [Test()]
+        [Category("AndroidFailed")]
         public void CheckElementsFoundUsingMultipleLocatorssProperty()
         {
-            Assert.GreaterOrEqual(pageObject.GetMultipleFindByElementPropertySize(), 10);
-            Assert.LessOrEqual(pageObject.GetMultipleFindByElementSize(), 14);
+            Assert.GreaterOrEqual(pageObject.GetMultipleFindByElementPropertySize(), 1);
         }
 
         [Test()]
-        [Category("Android")]
+        [Category("AndroidFailed")]
         public void CheckElementFoundByChainedSearch()
         {
             Assert.NotNull(pageObject.GetFoundByChainedSearchElementText());
         }
 
         [Test()]
-        [Category("Android")]
+        [Category("AndroidFailed")]
         public void CheckElementsFoundByChainedSearch()
         {
-            Assert.GreaterOrEqual(pageObject.GetFoundByChainedSearchElementSize(), 10);
-            Assert.LessOrEqual(pageObject.GetMultipleFindByElementSize(), 14);
+            Assert.GreaterOrEqual(pageObject.GetFoundByChainedSearchElementSize(), 1);
         }
 
         [Test()]
-        [Category("Android")]
+        [Category("AndroidFailed")]
         public void CheckFoundByChainedSearchElementProperty()
         {
             Assert.NotNull(pageObject.GetFoundByChainedSearchElementPropertyText());
         }
 
         [Test()]
-        [Category("Android")]
+        [Category("AndroidFailed")]
         public void CheckFoundByChainedSearchElementsProperty()
         {
-            Assert.GreaterOrEqual(pageObject.GetFoundByChainedSearchElementPropertySize(), 10);
-            Assert.LessOrEqual(pageObject.GetMultipleFindByElementSize(), 14);
+            Assert.GreaterOrEqual(pageObject.GetFoundByChainedSearchElementPropertySize(), 1);
         }
 
         [Test()]
-        [Category("Android")]
+        [Category("AndroidFailed")]
         public void CheckElementMatchedToAll()
         {
             Assert.NotNull(pageObject.GetMatchedToAllLocatorsElementText());
         }
 
         [Test()]
-        [Category("Android")]
+        [Category("AndroidFailed")]
         public void CheckElementsMatchedToAll()
         {
             Assert.GreaterOrEqual(pageObject.GetMatchedToAllLocatorsElementSize(), 1);
-            Assert.LessOrEqual(pageObject.GetMatchedToAllLocatorsElementSize(), 13);
+            Assert.LessOrEqual(pageObject.GetMatchedToAllLocatorsElementSize(), 2);
         }
 
         [Test()]
-        [Category("Android")]
+        [Category("AndroidFailed")]
         public void CheckElementMatchedToAllProperty()
         {
             Assert.NotNull(pageObject.GetMatchedToAllLocatorsElementPropertyText());
         }
 
         [Test()]
-        [Category("Android")]
+        [Category("AndroidFailed")]
         public void CheckElementMatchedToAllElementsProperty()
         {
             Assert.GreaterOrEqual(pageObject.GetMatchedToAllLocatorsElementPropertySize(), 1);
-            Assert.LessOrEqual(pageObject.GetMatchedToAllLocatorsElementPropertySize(), 13);
+            Assert.LessOrEqual(pageObject.GetMatchedToAllLocatorsElementPropertySize(), 2);
         }
     }
 }

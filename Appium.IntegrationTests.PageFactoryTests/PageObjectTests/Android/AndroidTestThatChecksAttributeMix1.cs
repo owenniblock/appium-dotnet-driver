@@ -12,16 +12,17 @@ using System;
 namespace Appium.Integration.Tests.PageObjectTests.Android
 {
     [TestFixture()]
-    public class AndroidTestThatChecksAttributeMix3SelendroidMode
+    public class AndroidTestThatChecksAttributeMix1
     {
         private AndroidDriver<AppiumWebElement> driver;
-        private AndroidPageObjectChecksSelendroidModeOnNativeApp pageObject;
+        private AndroidPageObjectChecksAttributeMixOnNativeApp1 pageObject;
 
         [SetUp]
         public void BeforeAll()
         {
-            DesiredCapabilities capabilities =
-                Caps.getSelendroid19Caps(Apps.get("selendroidTestApp"));
+            DesiredCapabilities capabilities = Env.isSauce() ?
+                Caps.getAndroid501Caps(Apps.get("androidApiDemos")) :
+                Caps.getAndroid19Caps(Apps.get("androidApiDemos"));
             if (Env.isSauce())
             {
                 capabilities.SetCapability("username", Env.getEnvVar("SAUCE_USERNAME"));
@@ -31,10 +32,9 @@ namespace Appium.Integration.Tests.PageObjectTests.Android
             }
             Uri serverUri = Env.isSauce() ? AppiumServers.sauceURI : AppiumServers.LocalServiceURIAndroid;
             driver = new AndroidDriver<AppiumWebElement>(serverUri, capabilities, Env.INIT_TIMEOUT_SEC);
-            driver.Context = "NATIVE_APP";
             TimeOutDuration timeSpan = new TimeOutDuration(new TimeSpan(0, 0, 0, 5, 0));
-            pageObject = new AndroidPageObjectChecksSelendroidModeOnNativeApp();
-            //PageFactory.InitElements(driver, pageObject, new AppiumPageObjectMemberDecorator(timeSpan));
+            pageObject = new AndroidPageObjectChecksAttributeMixOnNativeApp1();
+            PageFactory.InitElements(driver, pageObject, new AppiumPageObjectMemberDecorator(timeSpan));
         }
 
         [TearDown]
@@ -50,7 +50,7 @@ namespace Appium.Integration.Tests.PageObjectTests.Android
             }
         }
 
-         [Test()]
+        [Test()]
         [Category("AndroidFailed")]
         public void CheckMobileElement()
         {
@@ -89,7 +89,8 @@ namespace Appium.Integration.Tests.PageObjectTests.Android
         [Category("AndroidFailed")]
         public void CheckElementsFoundUsingMultipleLocators()
         {
-            Assert.GreaterOrEqual(pageObject.GetMultipleFindByElementSize(), 1);
+            Assert.GreaterOrEqual(pageObject.GetMultipleFindByElementSize(), 10);
+            Assert.LessOrEqual(pageObject.GetMultipleFindByElementSize(), 14);
         }
 
         [Test()]
@@ -103,7 +104,8 @@ namespace Appium.Integration.Tests.PageObjectTests.Android
         [Category("AndroidFailed")]
         public void CheckElementsFoundUsingMultipleLocatorssProperty()
         {
-            Assert.GreaterOrEqual(pageObject.GetMultipleFindByElementPropertySize(), 1);
+            Assert.GreaterOrEqual(pageObject.GetMultipleFindByElementPropertySize(), 10);
+            Assert.LessOrEqual(pageObject.GetMultipleFindByElementSize(), 14);
         }
 
         [Test()]
@@ -117,7 +119,8 @@ namespace Appium.Integration.Tests.PageObjectTests.Android
         [Category("AndroidFailed")]
         public void CheckElementsFoundByChainedSearch()
         {
-            Assert.GreaterOrEqual(pageObject.GetFoundByChainedSearchElementSize(), 1);
+            Assert.GreaterOrEqual(pageObject.GetFoundByChainedSearchElementSize(), 10);
+            Assert.LessOrEqual(pageObject.GetMultipleFindByElementSize(), 14);
         }
 
         [Test()]
@@ -131,7 +134,8 @@ namespace Appium.Integration.Tests.PageObjectTests.Android
         [Category("AndroidFailed")]
         public void CheckFoundByChainedSearchElementsProperty()
         {
-            Assert.GreaterOrEqual(pageObject.GetFoundByChainedSearchElementPropertySize(), 1);
+            Assert.GreaterOrEqual(pageObject.GetFoundByChainedSearchElementPropertySize(), 10);
+            Assert.LessOrEqual(pageObject.GetMultipleFindByElementSize(), 14);
         }
 
         [Test()]
@@ -146,7 +150,7 @@ namespace Appium.Integration.Tests.PageObjectTests.Android
         public void CheckElementsMatchedToAll()
         {
             Assert.GreaterOrEqual(pageObject.GetMatchedToAllLocatorsElementSize(), 1);
-            Assert.LessOrEqual(pageObject.GetMatchedToAllLocatorsElementSize(), 2);
+            Assert.LessOrEqual(pageObject.GetMatchedToAllLocatorsElementSize(), 13);
         }
 
         [Test()]
@@ -161,7 +165,7 @@ namespace Appium.Integration.Tests.PageObjectTests.Android
         public void CheckElementMatchedToAllElementsProperty()
         {
             Assert.GreaterOrEqual(pageObject.GetMatchedToAllLocatorsElementPropertySize(), 1);
-            Assert.LessOrEqual(pageObject.GetMatchedToAllLocatorsElementPropertySize(), 2);
+            Assert.LessOrEqual(pageObject.GetMatchedToAllLocatorsElementPropertySize(), 13);
         }
     }
 }

@@ -33,7 +33,7 @@ namespace Appium.Integration.Tests.PageObjectTests.Android
             driver = new AndroidDriver<AppiumWebElement>(serverUri, capabilities, Env.INIT_TIMEOUT_SEC);
             TimeOutDuration timeSpan = new TimeOutDuration(new TimeSpan(0, 0, 0, 5, 0));
             pageObject = new AndroidPageObjectChecksSeleniumFindsByCompatibility();
-            //PageFactory.InitElements(driver, pageObject, new AppiumPageObjectMemberDecorator(timeSpan));
+            PageFactory.InitElements(driver, pageObject, new AppiumPageObjectMemberDecorator(timeSpan));
         }
 
         [TearDown]

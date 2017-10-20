@@ -8,24 +8,12 @@
 
   <ItemGroup>
     <Folder Include="Android\" />
-    <Folder Include="helpers\" />
     <Folder Include="iOS\" />
-    <Folder Include="PageObjects\" />
-    <Folder Include="PageObjectTests\" />
     <Folder Include="ServerTests\" />
     <Folder Include="Windows\" />
-    <Folder Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Update="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Update="Properties\Resources.Designer.cs">
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
+    <Compile Remove="Properties\Resources.Designer.cs" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="dotnet-test-nunit" Version="3.4.0-beta-3" />
@@ -37,5 +25,6 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\appium-dotnet-driver\appium-dotnet-driver.csproj" />
+    <ProjectReference Include="..\Appium.IntegrationTests.PageFactoryTests\Appium.IntegrationTests.Shared\Appium.IntegrationTests.Shared.csproj" />
   </ItemGroup>
 </Project>

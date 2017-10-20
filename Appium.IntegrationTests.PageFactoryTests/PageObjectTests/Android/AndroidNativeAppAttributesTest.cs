@@ -12,10 +12,10 @@ using System;
 namespace Appium.Integration.Tests.PageObjectTests.Android
 {
     [TestFixture()]
-    public class AndroidTestThatChecksAttributeMix1
+    public class AndroidNativeAppAttributesTest
     {
         private AndroidDriver<AppiumWebElement> driver;
-        private AndroidPageObjectChecksAttributeMixOnNativeApp1 pageObject;
+        private AndroidPageObjectChecksAttributesForNativeAndroidApp pageObject;
 
         [SetUp]
         public void BeforeAll()
@@ -33,8 +33,8 @@ namespace Appium.Integration.Tests.PageObjectTests.Android
             Uri serverUri = Env.isSauce() ? AppiumServers.sauceURI : AppiumServers.LocalServiceURIAndroid;
             driver = new AndroidDriver<AppiumWebElement>(serverUri, capabilities, Env.INIT_TIMEOUT_SEC);
             TimeOutDuration timeSpan = new TimeOutDuration(new TimeSpan(0, 0, 0, 5, 0));
-            pageObject = new AndroidPageObjectChecksAttributeMixOnNativeApp1();
-            //PageFactory.InitElements(driver, pageObject, new AppiumPageObjectMemberDecorator(timeSpan));
+            pageObject = new AndroidPageObjectChecksAttributesForNativeAndroidApp();
+            PageFactory.InitElements(driver, pageObject, new AppiumPageObjectMemberDecorator(timeSpan));
         }
 
         [TearDown]
@@ -51,42 +51,42 @@ namespace Appium.Integration.Tests.PageObjectTests.Android
         }
 
         [Test()]
-        [Category("AndroidFailed")]
+        [Category("Android")]
         public void CheckMobileElement()
         {
             Assert.NotNull(pageObject.GetMobileElementText());
         }
 
         [Test()]
-        [Category("AndroidFailed")]
+        [Category("Android")]
         public void CheckMobileElements()
         {
             Assert.GreaterOrEqual(pageObject.GetMobileElementSize(), 1);
         }
 
         [Test()]
-        [Category("AndroidFailed")]
+        [Category("Android")]
         public void CheckMobileElementProperty()
         {
             Assert.NotNull(pageObject.GetMobileElementPropertyText());
         }
 
         [Test()]
-        [Category("AndroidFailed")]
+        [Category("Android")]
         public void CheckMobileElementsProperty()
         {
             Assert.GreaterOrEqual(pageObject.GetMobileElementPropertySize(), 1);
         }
 
         [Test()]
-        [Category("AndroidFailed")]
+        [Category("Android")]
         public void CheckElementFoundUsingMultipleLocators()
         {
             Assert.NotNull(pageObject.GetMultipleFindByElementText());
         }
 
         [Test()]
-        [Category("AndroidFailed")]
+        [Category("Android")]
         public void CheckElementsFoundUsingMultipleLocators()
         {
             Assert.GreaterOrEqual(pageObject.GetMultipleFindByElementSize(), 10);
@@ -94,14 +94,13 @@ namespace Appium.Integration.Tests.PageObjectTests.Android
         }
 
         [Test()]
-        [Category("AndroidFailed")]
+        [Category("Android")]
         public void CheckElementFoundUsingMultipleLocatorsProperty()
         {
             Assert.NotNull(pageObject.GetMultipleFindByElementPropertyText());
         }
 
         [Test()]
-        [Category("AndroidFailed")]
         public void CheckElementsFoundUsingMultipleLocatorssProperty()
         {
             Assert.GreaterOrEqual(pageObject.GetMultipleFindByElementPropertySize(), 10);
@@ -109,14 +108,14 @@ namespace Appium.Integration.Tests.PageObjectTests.Android
         }
 
         [Test()]
-        [Category("AndroidFailed")]
+        [Category("Android")]
         public void CheckElementFoundByChainedSearch()
         {
             Assert.NotNull(pageObject.GetFoundByChainedSearchElementText());
         }
 
         [Test()]
-        [Category("AndroidFailed")]
+        [Category("Android")]
         public void CheckElementsFoundByChainedSearch()
         {
             Assert.GreaterOrEqual(pageObject.GetFoundByChainedSearchElementSize(), 10);
@@ -124,14 +123,14 @@ namespace Appium.Integration.Tests.PageObjectTests.Android
         }
 
         [Test()]
-        [Category("AndroidFailed")]
+        [Category("Android")]
         public void CheckFoundByChainedSearchElementProperty()
         {
             Assert.NotNull(pageObject.GetFoundByChainedSearchElementPropertyText());
         }
 
         [Test()]
-        [Category("AndroidFailed")]
+        [Category("Android")]
         public void CheckFoundByChainedSearchElementsProperty()
         {
             Assert.GreaterOrEqual(pageObject.GetFoundByChainedSearchElementPropertySize(), 10);
@@ -139,14 +138,14 @@ namespace Appium.Integration.Tests.PageObjectTests.Android
         }
 
         [Test()]
-        [Category("AndroidFailed")]
+        [Category("Android")]
         public void CheckElementMatchedToAll()
         {
             Assert.NotNull(pageObject.GetMatchedToAllLocatorsElementText());
         }
 
         [Test()]
-        [Category("AndroidFailed")]
+        [Category("Android")]
         public void CheckElementsMatchedToAll()
         {
             Assert.GreaterOrEqual(pageObject.GetMatchedToAllLocatorsElementSize(), 1);
@@ -154,14 +153,14 @@ namespace Appium.Integration.Tests.PageObjectTests.Android
         }
 
         [Test()]
-        [Category("AndroidFailed")]
+        [Category("Android")]
         public void CheckElementMatchedToAllProperty()
         {
             Assert.NotNull(pageObject.GetMatchedToAllLocatorsElementPropertyText());
         }
 
         [Test()]
-        [Category("AndroidFailed")]
+        [Category("Android")]
         public void CheckElementMatchedToAllElementsProperty()
         {
             Assert.GreaterOrEqual(pageObject.GetMatchedToAllLocatorsElementPropertySize(), 1);

@@ -25,12 +25,12 @@ namespace Appium.Integration.Tests.Helpers
                 }
                 else
                 {
-                    File.WriteAllBytes("ApiDemos-debug.apk", Properties.Resources.ApiDemos_debug);
-                    File.WriteAllBytes("selendroid-test-app-0.10.0.apk", Properties.Resources.selendroid_test_app_0_10_0);
-                    File.WriteAllBytes("TestApp7.1.app.zip", Properties.Resources.TestApp7_1_app);
-                    File.WriteAllBytes("WebViewApp7.1.app.zip", Properties.Resources.WebViewApp7_1_app);
-                    File.WriteAllBytes("UICatalog7.1.app.zip", Properties.Resources.UICatalog7_1_app);
-                    File.WriteAllBytes("IntentExample.apk", Properties.Resources.IntentExample);
+                    File.WriteAllBytes("ApiDemos-debug.apk", IntegrationTests.Shared.Properties.Resources.ApiDemos_debug);
+                    File.WriteAllBytes("selendroid-test-app-0.10.0.apk", IntegrationTests.Shared.Properties.Resources.selendroid_test_app_0_10_0);
+                    File.WriteAllBytes("TestApp7.1.app.zip", IntegrationTests.Shared.Properties.Resources.TestApp7_1_app);
+                    File.WriteAllBytes("WebViewApp7.1.app.zip", IntegrationTests.Shared.Properties.Resources.WebViewApp7_1_app);
+                    File.WriteAllBytes("UICatalog7.1.app.zip", IntegrationTests.Shared.Properties.Resources.UICatalog7_1_app);
+                    File.WriteAllBytes("IntentExample.apk", IntegrationTests.Shared.Properties.Resources.IntentExample);
 
                     Appz = new Dictionary<string, string> {
                         { "iosTestApp", new FileInfo("TestApp7.1.app.zip").FullName },
