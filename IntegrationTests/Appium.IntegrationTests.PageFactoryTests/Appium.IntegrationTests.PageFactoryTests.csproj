@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AD5035A6-FB3B-4B1A-9EBB-8215DA50EE75}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Appium.IntegrationTests.PageFactoryTests</RootNamespace>
+    <AssemblyName>Appium.IntegrationTests.PageFactoryTests</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <ReleaseVersion>3.0.1.0</ReleaseVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Drawing" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="PageObjects\" />
+    <Folder Include="PageObjectTests\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="PageObjects\AndroidJavaScriptTestPageObject.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="PageObjects\AndroidPageObjectChecksAttributeMixOnNativeApp1.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="PageObjects\AndroidPageObjectChecksAttributeMixOnNativeApp2.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="PageObjects\AndroidPageObjectChecksAttributesForNativeAndroidApp.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="PageObjects\AndroidPageObjectChecksSelendroidModeOnNativeApp.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="PageObjects\AndroidPageObjectChecksSeleniumFindsByCompatibility.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="PageObjects\AndroidPageObjectThatChecksTouchActions.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="PageObjects\AndroidWebView.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="PageObjects\IOSPageObjectChecksAttributeMixOnNativeApp.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="PageObjects\IOSPageObjectChecksAttributesForNativeIOSApp.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="PageObjectTests\Android\AndroidNativeAppAttributesTest.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="PageObjectTests\Android\AndroidTestThatChecksAttributeMix1.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="PageObjectTests\Android\AndroidTestThatChecksAttributeMix2.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="PageObjectTests\Android\AndroidTestThatChecksAttributeMix3SelendroidMode.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="PageObjectTests\Android\AndroidWebViewTest.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="PageObjectTests\Android\SeleniumAttributesCompatipilityTest.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="PageObjectTests\DesktopBrowserCompatibility\DesctopBrowserCompatibilityTest.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="PageObjectTests\IOS\IOSNativeAppAttributesTest.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="PageObjectTests\IOS\IOSTestThatChecksAttributeMix.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="PageObjectTests\NegativeTests\NoSuchElementTestOnAndroid.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="PageObjectTests\Other\AndroidJSWebViewTest.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="PageObjectTests\Other\AndroidTouchActionTest.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <Compile Include="PageObjectTests\TimeOutManagement\TimeOutManagementTest.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Appium.IntegrationTests.Shared\Appium.IntegrationTests.Shared.csproj">
+      <Project>{2D44D8B3-2F44-4337-B753-90B0A43B9F73}</Project>
+      <Name>Appium.IntegrationTests.Shared</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\appium-dotnet-driver\appium-dotnet-driver.csproj">
+      <Project>{D9107A76-238E-4A3C-9452-7F9966822A51}</Project>
+      <Name>appium-dotnet-driver</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+</Project>
